@@ -1,0 +1,202 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 6.0.2 (Python 3.11.2 on win32)" generated="20230302 23:30:01.792" rpa="false" schemaversion="3">
+<suite id="s1" name="Test" source="C:\Users\hp\Desktop\Robot_Tutorial\test.robot">
+<kw name="Browser Open" type="SETUP">
+<kw name="Open Browser" library="SeleniumLibrary">
+<arg>${URL}</arg>
+<arg>Chrome</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<msg timestamp="20230302 23:30:02.570" level="INFO">Opening browser 'Chrome' to base url 'https://opensource-demo.orangehrmlive.com/web/index.php/auth/login'.</msg>
+<status status="PASS" starttime="20230302 23:30:02.570" endtime="20230302 23:30:17.438"/>
+</kw>
+<kw name="Maximize Browser Window" library="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" starttime="20230302 23:30:17.438" endtime="20230302 23:30:17.582"/>
+</kw>
+<status status="PASS" starttime="20230302 23:30:02.570" endtime="20230302 23:30:17.582"/>
+</kw>
+<test id="s1-t1" name="1" line="16">
+<kw name="LoginTest">
+<arg>Admin</arg>
+<arg>admin123</arg>
+<kw name="Jayedlower" library="jayed">
+<var>${lowerUsername}</var>
+<arg>${Username}</arg>
+<msg timestamp="20230302 23:30:17.585" level="INFO">${lowerUsername} = admin</msg>
+<status status="PASS" starttime="20230302 23:30:17.584" endtime="20230302 23:30:17.585"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>5s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20230302 23:30:22.585" level="INFO">Slept 5 seconds</msg>
+<status status="PASS" starttime="20230302 23:30:17.585" endtime="20230302 23:30:22.585"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>name=username</arg>
+<arg>${lowerUsername}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20230302 23:30:22.586" level="INFO">Typing text 'admin' into text field 'name=username'.</msg>
+<status status="PASS" starttime="20230302 23:30:22.585" endtime="20230302 23:30:22.664"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>5s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20230302 23:30:27.665" level="INFO">Slept 5 seconds</msg>
+<status status="PASS" starttime="20230302 23:30:22.664" endtime="20230302 23:30:27.665"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>name=password</arg>
+<arg>${Password}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20230302 23:30:27.665" level="INFO">Typing text 'admin123' into text field 'name=password'.</msg>
+<status status="PASS" starttime="20230302 23:30:27.665" endtime="20230302 23:30:27.743"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>5s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20230302 23:30:32.744" level="INFO">Slept 5 seconds</msg>
+<status status="PASS" starttime="20230302 23:30:27.743" endtime="20230302 23:30:32.744"/>
+</kw>
+<kw name="Click Button" library="SeleniumLibrary">
+<arg>xpath=//*[@id="app"]/div[1]/div/div[1]/div/div[2]/div[2]/form/div[3]/button</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<msg timestamp="20230302 23:30:32.744" level="INFO">Clicking button 'xpath=//*[@id="app"]/div[1]/div/div[1]/div/div[2]/div[2]/form/div[3]/button'.</msg>
+<status status="PASS" starttime="20230302 23:30:32.744" endtime="20230302 23:30:34.401"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>5s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20230302 23:30:39.402" level="INFO">Slept 5 seconds</msg>
+<status status="PASS" starttime="20230302 23:30:34.402" endtime="20230302 23:30:39.402"/>
+</kw>
+<kw name="Template Logic">
+<arg>${Username}</arg>
+<arg>${Password}</arg>
+<if>
+<branch type="IF" condition="(&quot;${Password}&quot; == &quot;admin123&quot; and &quot;${Username}&quot;=&quot;Admin&quot;)">
+<kw name="Location Should Be" library="SeleniumLibrary">
+<arg>https://opensource-demo.orangehrmlive.com/web/index.php/dashboard/index</arg>
+<doc>Verifies that the current URL is exactly ``url``.</doc>
+<status status="NOT RUN" starttime="20230302 23:30:39.403" endtime="20230302 23:30:39.403"/>
+</kw>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>xpath=//*[@id="app"]/div[1]/div[1]/header/div[1]/div[2]/ul/li/span</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="NOT RUN" starttime="20230302 23:30:39.403" endtime="20230302 23:30:39.403"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>xpath=//*[@id="app"]/div[1]/div[1]/header/div[1]/div[2]/ul/li/span</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="NOT RUN" starttime="20230302 23:30:39.403" endtime="20230302 23:30:39.403"/>
+</kw>
+<kw name="Click Link" library="SeleniumLibrary">
+<arg>Logout</arg>
+<doc>Clicks a link identified by ``locator``.</doc>
+<status status="NOT RUN" starttime="20230302 23:30:39.403" endtime="20230302 23:30:39.403"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>5s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="NOT RUN" starttime="20230302 23:30:39.403" endtime="20230302 23:30:39.403"/>
+</kw>
+<msg timestamp="20230302 23:30:39.403" level="FAIL">Evaluating IF condition failed: Evaluating expression '("admin123" == "admin123" and "Admin"="Admin")' failed: SyntaxError: invalid syntax (&lt;string&gt;, line 1)</msg>
+<status status="FAIL" starttime="20230302 23:30:39.403" endtime="20230302 23:30:39.403"/>
+</branch>
+<branch type="ELSE">
+<kw name="Location Should Be" library="SeleniumLibrary">
+<arg>https://opensource-demo.orangehrmlive.com/web/index.php/auth/login</arg>
+<doc>Verifies that the current URL is exactly ``url``.</doc>
+<status status="NOT RUN" starttime="20230302 23:30:39.403" endtime="20230302 23:30:39.403"/>
+</kw>
+<status status="NOT RUN" starttime="20230302 23:30:39.403" endtime="20230302 23:30:39.404"/>
+</branch>
+<status status="FAIL" starttime="20230302 23:30:39.403" endtime="20230302 23:30:39.404"/>
+</if>
+<status status="FAIL" starttime="20230302 23:30:39.402" endtime="20230302 23:30:39.404"/>
+</kw>
+<status status="FAIL" starttime="20230302 23:30:17.584" endtime="20230302 23:30:39.404"/>
+</kw>
+<status status="FAIL" starttime="20230302 23:30:17.582" endtime="20230302 23:30:39.405">Evaluating IF condition failed: Evaluating expression '("admin123" == "admin123" and "Admin"="Admin")' failed: SyntaxError: invalid syntax (&lt;string&gt;, line 1)</status>
+</test>
+<test id="s1-t2" name="2" line="16">
+<kw name="LoginTest">
+<arg>Admin</arg>
+<arg>admin1234</arg>
+<kw name="Jayedlower" library="jayed">
+<var>${lowerUsername}</var>
+<arg>${Username}</arg>
+<msg timestamp="20230302 23:30:39.408" level="INFO">${lowerUsername} = admin</msg>
+<status status="PASS" starttime="20230302 23:30:39.408" endtime="20230302 23:30:39.408"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>5s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20230302 23:30:44.409" level="INFO">Slept 5 seconds</msg>
+<status status="PASS" starttime="20230302 23:30:39.409" endtime="20230302 23:30:44.409"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>name=username</arg>
+<arg>${lowerUsername}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20230302 23:30:44.409" level="INFO">Typing text 'admin' into text field 'name=username'.</msg>
+<msg timestamp="20230302 23:30:44.762" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-5.png"&gt;&lt;img src="selenium-screenshot-5.png" width="800px"&gt;&lt;/a&gt;</msg>
+<msg timestamp="20230302 23:30:44.762" level="FAIL">Element with locator 'name=username' not found.</msg>
+<status status="FAIL" starttime="20230302 23:30:44.409" endtime="20230302 23:30:44.768"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>5s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="NOT RUN" starttime="20230302 23:30:44.768" endtime="20230302 23:30:44.768"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>name=password</arg>
+<arg>${Password}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="NOT RUN" starttime="20230302 23:30:44.768" endtime="20230302 23:30:44.768"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>5s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="NOT RUN" starttime="20230302 23:30:44.769" endtime="20230302 23:30:44.769"/>
+</kw>
+<kw name="Click Button" library="SeleniumLibrary">
+<arg>xpath=//*[@id="app"]/div[1]/div/div[1]/div/div[2]/div[2]/form/div[3]/button</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<status status="NOT RUN" starttime="20230302 23:30:44.769" endtime="20230302 23:30:44.769"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>5s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="NOT RUN" starttime="20230302 23:30:44.769" endtime="20230302 23:30:44.769"/>
+</kw>
+<kw name="Template Logic">
+<arg>${Username}</arg>
+<arg>${Password}</arg>
+<status status="NOT RUN" starttime="20230302 23:30:44.769" endtime="20230302 23:30:44.769"/>
+</kw>
+<status status="FAIL" starttime="20230302 23:30:39.408" endtime="20230302 23:30:44.769"/>
+</kw>
+<status status="FAIL" starttime="20230302 23:30:39.407" endtime="20230302 23:30:44.770">Element with locator 'name=username' not found.</status>
+</test>
+<kw name="Browser Close" type="TEARDOWN">
+<kw name="Close Browser" library="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" starttime="20230302 23:30:44.773" endtime="20230302 23:30:46.911"/>
+</kw>
+<status status="PASS" starttime="20230302 23:30:44.772" endtime="20230302 23:30:46.911"/>
+</kw>
+<status status="FAIL" starttime="20230302 23:30:01.794" endtime="20230302 23:30:46.911"/>
+</suite>
+<statistics>
+<total>
+<stat pass="0" fail="2" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat pass="0" fail="2" skip="0" id="s1" name="Test">Test</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>
